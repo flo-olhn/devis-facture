@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1778667C2CCA6D22006F165B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 177866622CCA6D20006F165B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 177866692CCA6D20006F165B;
+			remoteInfo = "Devis Facture";
+		};
+		177866862CCA6D22006F165B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 177866622CCA6D20006F165B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 177866692CCA6D20006F165B;
+			remoteInfo = "Devis Facture";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1778666A2CCA6D20006F165B /* Devis Facture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Devis Facture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1778667B2CCA6D22006F165B /* Devis FactureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Devis FactureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		177866852CCA6D22006F165B /* Devis FactureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Devis FactureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1778666C2CCA6D20006F165B /* Devis Facture */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Devis Facture";
+			sourceTree = "<group>";
+		};
+		1778667E2CCA6D22006F165B /* Devis FactureTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Devis FactureTests";
+			sourceTree = "<group>";
+		};
+		177866882CCA6D22006F165B /* Devis FactureUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Devis FactureUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		177866672CCA6D20006F165B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177866782CCA6D22006F165B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177866822CCA6D22006F165B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		177866612CCA6D20006F165B = {
+			isa = PBXGroup;
+			children = (
+				1778666C2CCA6D20006F165B /* Devis Facture */,
+				1778667E2CCA6D22006F165B /* Devis FactureTests */,
+				177866882CCA6D22006F165B /* Devis FactureUITests */,
+				1778666B2CCA6D20006F165B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1778666B2CCA6D20006F165B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1778666A2CCA6D20006F165B /* Devis Facture.app */,
+				1778667B2CCA6D22006F165B /* Devis FactureTests.xctest */,
+				177866852CCA6D22006F165B /* Devis FactureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		177866692CCA6D20006F165B /* Devis Facture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1778668F2CCA6D22006F165B /* Build configuration list for PBXNativeTarget "Devis Facture" */;
+			buildPhases = (
+				177866662CCA6D20006F165B /* Sources */,
+				177866672CCA6D20006F165B /* Frameworks */,
+				177866682CCA6D20006F165B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1778666C2CCA6D20006F165B /* Devis Facture */,
+			);
+			name = "Devis Facture";
+			packageProductDependencies = (
+			);
+			productName = "Devis Facture";
+			productReference = 1778666A2CCA6D20006F165B /* Devis Facture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1778667A2CCA6D22006F165B /* Devis FactureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 177866922CCA6D22006F165B /* Build configuration list for PBXNativeTarget "Devis FactureTests" */;
+			buildPhases = (
+				177866772CCA6D22006F165B /* Sources */,
+				177866782CCA6D22006F165B /* Frameworks */,
+				177866792CCA6D22006F165B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1778667D2CCA6D22006F165B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1778667E2CCA6D22006F165B /* Devis FactureTests */,
+			);
+			name = "Devis FactureTests";
+			packageProductDependencies = (
+			);
+			productName = "Devis FactureTests";
+			productReference = 1778667B2CCA6D22006F165B /* Devis FactureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		177866842CCA6D22006F165B /* Devis FactureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 177866952CCA6D22006F165B /* Build configuration list for PBXNativeTarget "Devis FactureUITests" */;
+			buildPhases = (
+				177866812CCA6D22006F165B /* Sources */,
+				177866822CCA6D22006F165B /* Frameworks */,
+				177866832CCA6D22006F165B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				177866872CCA6D22006F165B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				177866882CCA6D22006F165B /* Devis FactureUITests */,
+			);
+			name = "Devis FactureUITests";
+			packageProductDependencies = (
+			);
+			productName = "Devis FactureUITests";
+			productReference = 177866852CCA6D22006F165B /* Devis FactureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		177866622CCA6D20006F165B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					177866692CCA6D20006F165B = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					1778667A2CCA6D22006F165B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 177866692CCA6D20006F165B;
+					};
+					177866842CCA6D22006F165B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 177866692CCA6D20006F165B;
+					};
+				};
+			};
+			buildConfigurationList = 177866652CCA6D20006F165B /* Build configuration list for PBXProject "Devis Facture" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 177866612CCA6D20006F165B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1778666B2CCA6D20006F165B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				177866692CCA6D20006F165B /* Devis Facture */,
+				1778667A2CCA6D22006F165B /* Devis FactureTests */,
+				177866842CCA6D22006F165B /* Devis FactureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		177866682CCA6D20006F165B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177866792CCA6D22006F165B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177866832CCA6D22006F165B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		177866662CCA6D20006F165B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177866772CCA6D22006F165B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177866812CCA6D22006F165B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1778667D2CCA6D22006F165B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 177866692CCA6D20006F165B /* Devis Facture */;
+			targetProxy = 1778667C2CCA6D22006F165B /* PBXContainerItemProxy */;
+		};
+		177866872CCA6D22006F165B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 177866692CCA6D20006F165B /* Devis Facture */;
+			targetProxy = 177866862CCA6D22006F165B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1778668D2CCA6D22006F165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1778668E2CCA6D22006F165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		177866902CCA6D22006F165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Devis Facture/Devis_Facture.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Devis Facture/Preview Content\"";
+				DEVELOPMENT_TEAM = H2W9JMTS5Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.floolhn.Devis-Facture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		177866912CCA6D22006F165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Devis Facture/Devis_Facture.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Devis Facture/Preview Content\"";
+				DEVELOPMENT_TEAM = H2W9JMTS5Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.floolhn.Devis-Facture";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		177866932CCA6D22006F165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2W9JMTS5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.floolhn.Devis-FactureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Devis Facture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Devis Facture";
+			};
+			name = Debug;
+		};
+		177866942CCA6D22006F165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2W9JMTS5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.floolhn.Devis-FactureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Devis Facture.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Devis Facture";
+			};
+			name = Release;
+		};
+		177866962CCA6D22006F165B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2W9JMTS5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.floolhn.Devis-FactureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Devis Facture";
+			};
+			name = Debug;
+		};
+		177866972CCA6D22006F165B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H2W9JMTS5Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.floolhn.Devis-FactureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Devis Facture";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		177866652CCA6D20006F165B /* Build configuration list for PBXProject "Devis Facture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1778668D2CCA6D22006F165B /* Debug */,
+				1778668E2CCA6D22006F165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1778668F2CCA6D22006F165B /* Build configuration list for PBXNativeTarget "Devis Facture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177866902CCA6D22006F165B /* Debug */,
+				177866912CCA6D22006F165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		177866922CCA6D22006F165B /* Build configuration list for PBXNativeTarget "Devis FactureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177866932CCA6D22006F165B /* Debug */,
+				177866942CCA6D22006F165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		177866952CCA6D22006F165B /* Build configuration list for PBXNativeTarget "Devis FactureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177866962CCA6D22006F165B /* Debug */,
+				177866972CCA6D22006F165B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 177866622CCA6D20006F165B /* Project object */;
+}
