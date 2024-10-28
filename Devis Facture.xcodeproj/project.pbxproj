@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1778669A2CCA6D59006F165B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177866992CCA6D59006F165B /* Header.swift */; };
+		1778669C2CCA8542006F165B /* SpreadSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1778669B2CCA8542006F165B /* SpreadSheet.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1778667C2CCA6D22006F165B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		1778666A2CCA6D20006F165B /* Devis Facture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Devis Facture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1778667B2CCA6D22006F165B /* Devis FactureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Devis FactureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177866852CCA6D22006F165B /* Devis FactureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Devis FactureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		177866992CCA6D59006F165B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		1778669B2CCA8542006F165B /* SpreadSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +82,7 @@
 		177866612CCA6D20006F165B = {
 			isa = PBXGroup;
 			children = (
+				177866982CCA6D44006F165B /* Views */,
 				1778666C2CCA6D20006F165B /* Devis Facture */,
 				1778667E2CCA6D22006F165B /* Devis FactureTests */,
 				177866882CCA6D22006F165B /* Devis FactureUITests */,
@@ -90,6 +98,15 @@
 				177866852CCA6D22006F165B /* Devis FactureUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		177866982CCA6D44006F165B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				177866992CCA6D59006F165B /* Header.swift */,
+				1778669B2CCA8542006F165B /* SpreadSheet.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1778669A2CCA6D59006F165B /* Header.swift in Sources */,
+				1778669C2CCA8542006F165B /* SpreadSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
