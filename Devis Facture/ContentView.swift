@@ -10,15 +10,24 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var headerData = HeaderData()
     
+    @StateObject var itemStore = ItemStore()
+    
+    @State var mHT: Double = 0
+    
+    @State var pages: [Int] = [0, 1]
+    
     var body: some View {
-        @State var pages: [Int] = [0]
         ScrollView {
             ForEach(pages, id: \.self) { page in
+                @StateObject var iS = ItemStore()
                 VStack {
                     Header(data: headerData)
-                    SpreadSheet()
+//                    pages.count == 1 ?
+//                    SpreadSheet(itemStore: itemStore) : SpreadSheet(itemStore: ItemStore())
+                    SpreadSheet(itemStore: iS)
+                    Text("Montant HT: \(iS.montantHT(), specifier: "%.2f") €")
                     Spacer()
-                    Text("\(page) / \(pages.count)")
+                    Text("\(page+1) / \(pages.count)")
                 }
                 .padding([.top, .bottom], 76.54)
                 .padding([.leading, .trailing], 59.53)

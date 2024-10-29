@@ -30,6 +30,10 @@ class ItemStore: ObservableObject {
         0: TableItem(description: "", unitPrice: 0.0, surface: 0.0)
     ]
     
+    func montantHT() -> Double {
+        items.values.reduce(0) { $0 + $1.total }
+    }
+    
     func addItem() {
         key += 1
         items[key] = TableItem()
@@ -46,7 +50,7 @@ struct SpreadSheet: View {
     
     @FocusState private var focusedField: Field?
     
-    @ObservedObject private var itemStore = ItemStore()
+    @ObservedObject var itemStore: ItemStore
     
     var orderedItems: [Int] {
         itemStore.items.keys.sorted()
@@ -76,6 +80,8 @@ struct SpreadSheet: View {
     ]
     
     @State private var yPos: CGFloat = .zero
+    
+    @State private var montantHT: Double = 0.0
     
     var body: some View {
         VStack {
@@ -174,7 +180,6 @@ struct SpreadSheet: View {
             
             Button {
                 itemStore.addItem()
-                print(yPos)
             } label: {
                 Text("\(Image(systemName: "plus")) Nouvelle Ligne")
                     .padding(0)
@@ -245,5 +250,5 @@ struct DynamicHeightTextEditor: View {
 
 
 #Preview {
-    SpreadSheet()
+    SpreadSheet(itemStore: ItemStore())
 }
