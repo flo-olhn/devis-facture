@@ -8,38 +8,25 @@
 import SwiftUI
 
 struct Header: View {
-    @State private var title1 = "DEVIS DE PLATRERIE"
-    @State private var nom1 = ""
-    @State private var add1 = ""
-    @State private var code1 = ""
-    @State private var city1 = ""
-    @State private var phone1 = ""
-    @State private var email1 = ""
-    
-    @State private var nom2 = ""
-    @State private var add2 = ""
-    @State private var code2 = ""
-    @State private var city2 = ""
-    @State private var phone2 = ""
-    @State private var email2 = ""
+    @ObservedObject var data: HeaderData
     
     @State private var date = "\(Date().formatted(date: .numeric, time: .omitted))"
     
     var body: some View {
         VStack {
-            CustomTextField(text: $title1, placeholder: "Titre", size: 32)
+            CustomTextField(text: $data.title1, placeholder: "Titre", size: 32)
                 .multilineTextAlignment(.center)
             HStack {
-                ContactInfo(contactName: $nom1, contactAddress: $add1, contactPCode: $code1, contactCity: $city1, contactPhone: $phone1, contactEmail: $email1)
+                ContactInfo(contactName: $data.nom1, contactAddress: $data.add1, contactPCode: $data.code1, contactCity: $data.city1, contactPhone: $data.phone1, contactEmail: $data.email1)
                 Spacer()
-                ContactInfo(contactName: $nom2, contactAddress: $add2, contactPCode: $code2, contactCity: $city2, contactPhone: $phone2, contactEmail: $email2)
+                ContactInfo(contactName: $data.nom2, contactAddress: $data.add2, contactPCode: $data.code2, contactCity: $data.city2, contactPhone: $data.phone2, contactEmail: $data.email2)
                     .multilineTextAlignment(.trailing)
             }
             .padding(.bottom)
             HStack {
-                CustomTextField(text: $city1, placeholder: "Ville")
+                CustomTextField(text: $data.city1, placeholder: "Ville")
                 Text(", le")
-                CustomTextField(text: $date, placeholder: "Date")
+                CustomTextField(text: $data.date, placeholder: "Date")
             }
         }
     }
@@ -85,5 +72,5 @@ struct ContactInfo: View {
 }
 
 #Preview {
-    Header()
+    Header(data: HeaderData())
 }

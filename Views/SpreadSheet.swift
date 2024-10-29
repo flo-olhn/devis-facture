@@ -75,6 +75,8 @@ struct SpreadSheet: View {
         GridItem(.flexible(minimum: 40), spacing: -1)
     ]
     
+    @State private var yPos: CGFloat = .zero
+    
     var body: some View {
         VStack {
             LazyVGrid(columns: columns, spacing: 0) {
@@ -149,7 +151,18 @@ struct SpreadSheet: View {
                             .border(.black)
                     }.buttonStyle(PlainButtonStyle()).padding(-9)
                 }
+            }.background(GeometryReader { geometry in
+                Color.clear
+//                    .onAppear {
+//                        print(geometry.frame(in: .global).maxY)
+//                    }
+                    .onChange(of: geometry.frame(in: .local).maxY) {
+                        print(geometry.frame(in: .local).maxY)
+                        yPos = geometry.frame(in: .local).maxY
+                    }
             }
+                
+            )
             .padding(.leading, 37)
             
             Button {
@@ -161,6 +174,7 @@ struct SpreadSheet: View {
                     .background(.blue.opacity(0.2))
                     .border(.black)
             }.buttonStyle(PlainButtonStyle()).padding(.top, -8).padding(.leading, -2)
+                .disabled(yPos > 1140)
             Spacer()
         }
     }
