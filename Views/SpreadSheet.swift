@@ -48,7 +48,7 @@ struct SpreadSheet: View {
     
     @ObservedObject private var itemStore = ItemStore()
     
-     var orderedItems: [Int] {
+    var orderedItems: [Int] {
         itemStore.items.keys.sorted()
     }
     
@@ -110,19 +110,26 @@ struct SpreadSheet: View {
                             get: { itemBinding.wrappedValue.description },
                             set: { itemBinding.wrappedValue.description = $0 }
                         ), font: .system(size: 12), rowHeight: $rowHeights[id])
-                            .scrollContentBackground(.hidden)
-                            .scrollDisabled(true)
-                            .focused($focusedField, equals: .description(id))
-                    }.padding(.bottom, -1)
+                        .scrollContentBackground(.hidden)
+                        .scrollDisabled(true)
+                        .focused($focusedField, equals: .description(id))
+                    }
+                    .background(GeometryReader { geometry in
+                        Color.clear
+                            .onAppear {
+                                rowHeights[key] = geometry.size.height
+                            }
+                    })
+                    .padding(.bottom, -1)
                     
                     dataCell(id: id, focusField: .unitPrice(id), height: rowHeights[id]) {
                         TextField("Prix U", value: Binding(
                             get: { itemBinding.wrappedValue.unitPrice },
                             set: { itemBinding.wrappedValue.unitPrice = $0 }
                         ), formatter: numFormatter)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .multilineTextAlignment(.center)
-                            .focused($focusedField, equals: .unitPrice(id))
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .multilineTextAlignment(.center)
+                        .focused($focusedField, equals: .unitPrice(id))
                     }.padding(.bottom, -1)
                     
                     dataCell(id: id, focusField: .surface(id), height: rowHeights[id]) {
@@ -130,9 +137,9 @@ struct SpreadSheet: View {
                             get: { itemBinding.wrappedValue.surface },
                             set: { itemBinding.wrappedValue.surface = $0 }
                         ), formatter: numFormatter)
-                            .textFieldStyle(.plain)
-                            .multilineTextAlignment(.center)
-                            .focused($focusedField, equals: .surface(id))
+                        .textFieldStyle(.plain)
+                        .multilineTextAlignment(.center)
+                        .focused($focusedField, equals: .surface(id))
                     }.padding(.bottom, -1)
                     
                     dataCell(id: id, height: rowHeights[id]) {
@@ -153,20 +160,21 @@ struct SpreadSheet: View {
                 }
             }.background(GeometryReader { geometry in
                 Color.clear
-//                    .onAppear {
-//                        print(geometry.frame(in: .global).maxY)
-//                    }
                     .onChange(of: geometry.frame(in: .local).maxY) {
-                        print(geometry.frame(in: .local).maxY)
+                        //print(geometry.frame(in: .local).maxY)
                         yPos = geometry.frame(in: .local).maxY
+                        if yPos > 1000 {
+                            //onExceedPageHeight()
+                        }
                     }
             }
-                
+                         
             )
             .padding(.leading, 37)
             
             Button {
                 itemStore.addItem()
+                print(yPos)
             } label: {
                 Text("\(Image(systemName: "plus")) Nouvelle Ligne")
                     .padding(0)
@@ -174,7 +182,7 @@ struct SpreadSheet: View {
                     .background(.blue.opacity(0.2))
                     .border(.black)
             }.buttonStyle(PlainButtonStyle()).padding(.top, -8).padding(.leading, -2)
-                .disabled(yPos > 1140)
+                .disabled(yPos > 1100)
             Spacer()
         }
     }

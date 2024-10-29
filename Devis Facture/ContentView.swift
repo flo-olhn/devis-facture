@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var pages: [Int] = [1, 2]
     @StateObject private var headerData = HeaderData()
     
     var body: some View {
+        @State var pages: [Int] = [0]
         ScrollView {
             ForEach(pages, id: \.self) { page in
                 VStack {
@@ -22,8 +22,8 @@ struct ContentView: View {
                 }
                 .padding([.top, .bottom], 76.54)
                 .padding([.leading, .trailing], 59.53)
-                .frame(width: 2480/2, height: 3508/2)
-                .border(.gray.opacity(0.5))
+                .frame(width: 2480 / 2, height: 3508 / 2)
+                .border(Color.gray.opacity(0.5))
                 .padding(40)
             }
         }

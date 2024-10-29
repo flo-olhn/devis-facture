@@ -10,7 +10,7 @@ import SwiftUI
 struct Header: View {
     @ObservedObject var data: HeaderData
     
-    @State private var date = "\(Date().formatted(date: .numeric, time: .omitted))"
+    //@State private var date = "\(Date().formatted(date: .numeric, time: .omitted))"
     
     var body: some View {
         VStack {
