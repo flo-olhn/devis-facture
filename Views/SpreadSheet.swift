@@ -23,7 +23,7 @@ struct TableItem: Equatable {
     }
 }
 
-@MainActor
+//@MainActor
 class ItemStore: ObservableObject {
     private var key: Int = 0
     @Published var items: [Int: TableItem] = [
@@ -163,6 +163,8 @@ struct SpreadSheet: View {
                             .background(.red)
                             .border(.black)
                     }.buttonStyle(PlainButtonStyle()).padding(-9)
+                }.onChange(of: itemStore.items) {
+                    print(itemStore.montantHT())
                 }
             }.background(GeometryReader { geometry in
                 Color.clear
