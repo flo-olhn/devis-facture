@@ -23,7 +23,6 @@ struct TableItem: Equatable {
     }
 }
 
-//@MainActor
 class ItemStore: ObservableObject {
     private var key: Int = 0
     @Published var items: [Int: TableItem] = [
@@ -34,20 +33,11 @@ class ItemStore: ObservableObject {
         }
     }
     
-    //var totalHTChanged: (() -> Void)?
-    
     @Published var totalHT: Double = 0.0
-    
-    //        func montantHT() -> Double {
-    //            let montant = totalHT
-    //            //totalHTChanged?()  // Appelle le callback lors de chaque calcul
-    //            return montant
-    //        }
     
     func addItem() {
         key += 1
         items[key] = TableItem()
-        //totalHTChanged?()
     }
     
     func removeItem(_ id: Int) {
@@ -182,7 +172,6 @@ struct SpreadSheet: View {
             }.background(GeometryReader { geometry in
                 Color.clear
                     .onChange(of: geometry.frame(in: .local).maxY) {
-                        //print(geometry.frame(in: .local).maxY)
                         yPos = geometry.frame(in: .local).maxY
                         if yPos > 1000 {
                             //onExceedPageHeight()

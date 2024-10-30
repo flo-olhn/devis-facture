@@ -53,7 +53,7 @@ struct ContentView: View {
     private func setupItemStores() {
         if itemStores.count != pages.count {
             itemStores = pages.map { _ in ItemStore() }
-            updateTotalHT() // Initial calculation of totalHT
+            updateTotalHT()
         }
     }
     
