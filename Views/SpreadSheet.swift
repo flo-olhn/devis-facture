@@ -28,19 +28,32 @@ class ItemStore: ObservableObject {
     private var key: Int = 0
     @Published var items: [Int: TableItem] = [
         0: TableItem(description: "", unitPrice: 0.0, surface: 0.0)
-    ]
-    
-    func montantHT() -> Double {
-        items.values.reduce(0) { $0 + $1.total }
+    ] {
+        didSet {
+            totalHT = items.values.reduce(0) { $0 + $1.total }
+        }
     }
+    
+    //var totalHTChanged: (() -> Void)?
+    
+    @Published var totalHT: Double = 0.0
+    
+    //        func montantHT() -> Double {
+    //            let montant = totalHT
+    //            //totalHTChanged?()  // Appelle le callback lors de chaque calcul
+    //            return montant
+    //        }
     
     func addItem() {
         key += 1
         items[key] = TableItem()
+        //totalHTChanged?()
     }
     
     func removeItem(_ id: Int) {
+        items[id] = nil
         items.removeValue(forKey: id)
+        //totalHTChanged?()
     }
 }
 
@@ -164,7 +177,7 @@ struct SpreadSheet: View {
                             .border(.black)
                     }.buttonStyle(PlainButtonStyle()).padding(-9)
                 }.onChange(of: itemStore.items) {
-                    print(itemStore.montantHT())
+                    //print(itemStore.montantHT())
                 }
             }.background(GeometryReader { geometry in
                 Color.clear
