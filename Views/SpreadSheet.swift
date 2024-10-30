@@ -118,7 +118,7 @@ struct SpreadSheet: View {
                         DynamicHeightTextEditor(text: Binding(
                             get: { itemBinding.wrappedValue.description },
                             set: { itemBinding.wrappedValue.description = $0 }
-                        ), font: .system(size: 12), rowHeight: $rowHeights[id])
+                        ), font: .system(size: 14), rowHeight: $rowHeights[id])
                         .scrollContentBackground(.hidden)
                         .scrollDisabled(true)
                         .focused($focusedField, equals: .description(id))
@@ -153,13 +153,13 @@ struct SpreadSheet: View {
                     
                     dataCell(id: id, height: rowHeights[id]) {
                         Text("\(itemBinding.wrappedValue.total, specifier: "%.2f") €")
-                            .font(.body)
+                            .font(.system(size: 14))
                     }.padding(.bottom, -1)
                     
                     Button {
                         itemStore.removeItem(id)
                     } label: {
-                        Text("\(Image(systemName: "trash"))")
+                        Text("\(Image(systemName: "trash"))").font(.system(size: 14))
                             .foregroundStyle(.white)
                             .padding(0)
                             .clipShape(Rectangle()).frame(maxWidth: 40, minHeight: rowHeights[id] ?? 40)
@@ -185,14 +185,13 @@ struct SpreadSheet: View {
             Button {
                 itemStore.addItem()
             } label: {
-                Text("\(Image(systemName: "plus")) Nouvelle Ligne")
+                Text("\(Image(systemName: "plus")) Nouvelle Ligne").font(.system(size: 14))
                     .padding(0)
                     .clipShape(Rectangle()).frame(maxWidth: 1118, maxHeight: 40)
                     .background(.blue.opacity(0.2))
                     .border(.black)
             }.buttonStyle(PlainButtonStyle()).padding(.top, -8).padding(.leading, -2)
                 .disabled(yPos > 1100)
-            Spacer()
         }
     }
     
@@ -204,6 +203,7 @@ struct SpreadSheet: View {
                 Color.clear
             }
             content()
+                .font(.system(size: 14))
                 .frame(maxWidth: .infinity, minHeight: height ?? 40)
                 .border(Color.black, width: 1)
                 .contentShape(Rectangle())

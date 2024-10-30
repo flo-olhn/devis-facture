@@ -23,7 +23,12 @@ struct ContentView: View {
                 VStack {
                     Header(data: headerData)
                     SpreadSheet(itemStore: iS)
-                    Text("Montant HT: \(iS.totalHT, specifier: "%.2f") €")
+                    HStack {
+                        Spacer()
+                        Text("Montant HT: \(totalHT, specifier: "%.2f") €")
+                            .font(.system(size: 16, weight: .medium))
+                            .padding()
+                    }
                     Spacer()
                     Text("\(pageIndex + 1) / \(pages.count)")
                 }
