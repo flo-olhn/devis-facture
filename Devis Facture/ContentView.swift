@@ -12,23 +12,61 @@ struct ContentView: View {
     @StateObject private var headerData = HeaderData()
     
     @State private var totalHT: Double = 0.0
-    @State private var itemStores: [ItemStore] = [ItemStore(), ItemStore()] // Array to hold ItemStore instances per page
-    @State private var pages: [Int] = [0, 1]
+    @State private var itemStores: [ItemStore] = [ItemStore()] // Array to hold ItemStore instances per page
+    @State private var pages: [Int] = [0]
+    
+    @State private var yPos: CGFloat = 0
+    
+    private func resetYPos() {
+        guard let lastItemStore = itemStores.last else { return }
+        
+        DispatchQueue.main.async {
+            lastItemStore.yPos = itemStores.last?.yPos ?? 0
+        }
+    }
+    
+    private func addNewPage() {
+        print("hereee!")
+        print(itemStores[pages.last!].yPos)
+        
+        //        pages.append(pages.last! + 1)
+        if itemStores[pages.last!].yPos > 1100 {
+            yPos = itemStores[pages.last!].yPos
+            pages.append(pages.last! + 1)
+            itemStores.append(ItemStore())
+        }
+        //resetYPos()
+        setupItemStores()
+    }
+    
+    private func removePage() {
+        if pages.count > 1 && itemStores[pages.last! - 1].yPos <= 1100 {
+            print("removed", itemStores[pages.last! - 1].yPos)
+            pages.removeLast()
+            itemStores.removeLast()
+            setupItemStores()
+            updateTotalHT()
+        }
+    }
     
     var body: some View {
-        ScrollView {
-            ForEach(pages.indices, id: \.self) { pageIndex in
-                let iS = itemStores[pageIndex]
-                
+        List {
+            ForEach(pages, id: \.self) { pageIndex in
+                let iS = pageIndex <= pages.last! ? itemStores[pageIndex] : itemStores[pageIndex - 1]
                 VStack {
                     Header(data: headerData)
-                    SpreadSheet(itemStore: iS)
+                    SpreadSheet(itemStore: iS) {
+                        addNewPage()
+                    } onUnexceedPageHeight: {
+                        removePage()
+                    }
+                    pageIndex == pages.last ?
                     HStack {
                         Spacer()
                         Text("Montant HT: \(totalHT, specifier: "%.2f") €")
                             .font(.system(size: 16, weight: .medium))
                             .padding()
-                    }
+                    } : nil
                     Spacer()
                     Text("\(pageIndex + 1) / \(pages.count)")
                 }
@@ -53,6 +91,48 @@ struct ContentView: View {
         .onAppear {
             setupItemStores()
         }
+        //        ScrollView {
+        //            ForEach(pages.indices, id: \.self) { pageIndex in
+        //                let iS = itemStores[pageIndex]
+        //
+        //                VStack {
+        //                    Header(data: headerData)
+        //                    SpreadSheet(itemStore: iS) {
+        //                        addNewPage()
+        //                    } onUnexceedPageHeight: {
+        //                        removePage()
+        //                    }
+        //                    pageIndex == pages.last ?
+        //                    HStack {
+        //                        Spacer()
+        //                        Text("Montant HT: \(totalHT, specifier: "%.2f") €")
+        //                            .font(.system(size: 16, weight: .medium))
+        //                            .padding()
+        //                    } : nil
+        //                    Spacer()
+        //                    Text("\(pageIndex + 1) / \(pages.count)")
+        //                }
+        //                .onAppear {
+        //                    setupObservers(for: iS)
+        //                }
+        //                .onChange(of: iS.totalHT) {
+        //                    setupItemStores()
+        //                }
+        //                .padding([.top, .bottom], 76.54)
+        //                .padding([.leading, .trailing], 59.53)
+        //                .frame(width: 2480 / 2, height: 3508 / 2)
+        //                .border(Color.gray.opacity(0.5))
+        //                .padding(40)
+        //            }
+        //
+        //            // Display combined total at the bottom
+        //            Text("Total HT for All Pages: \(totalHT, specifier: "%.2f") €")
+        //                .font(.headline)
+        //                .padding()
+        //        }
+        //        .onAppear {
+        //            setupItemStores()
+        //        }
     }
     
     private func setupItemStores() {

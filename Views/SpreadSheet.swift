@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 func w() -> Double {
     let maxW = 2480.0
@@ -35,6 +36,8 @@ class ItemStore: ObservableObject {
     
     @Published var totalHT: Double = 0.0
     
+    @Published var yPos: CGFloat = 0.0
+    
     func addItem() {
         key += 1
         items[key] = TableItem()
@@ -58,6 +61,9 @@ struct SpreadSheet: View {
     var orderedItems: [Int] {
         itemStore.items.keys.sorted()
     }
+    
+    let onExceedPageHeight: () -> Void
+    let onUnexceedPageHeight: () -> Void
     
     enum Field: Hashable {
         case description(Int)
@@ -84,7 +90,7 @@ struct SpreadSheet: View {
     
     @State private var yPos: CGFloat = .zero
     
-    @State private var montantHT: Double = 0.0
+    @State private var isPageFull: Bool = false
     
     var body: some View {
         VStack {
@@ -118,7 +124,7 @@ struct SpreadSheet: View {
                         DynamicHeightTextEditor(text: Binding(
                             get: { itemBinding.wrappedValue.description },
                             set: { itemBinding.wrappedValue.description = $0 }
-                        ), font: .system(size: 14), rowHeight: $rowHeights[id])
+                        ), font: .system(size: 14), rowHeight: $rowHeights[id], isPageFull: isPageFull)
                         .scrollContentBackground(.hidden)
                         .scrollDisabled(true)
                         .focused($focusedField, equals: .description(id))
@@ -127,6 +133,13 @@ struct SpreadSheet: View {
                         Color.clear
                             .onAppear {
                                 rowHeights[key] = geometry.size.height
+                                //itemStore.yPos = rowHeights[key] ?? 40
+                            }
+                            .onChange(of: rowHeights[key]) {
+                                rowHeights[key] = geometry.size.height
+                                //itemStore.yPos = rowHeights[key] ?? 40
+                                print("row:", rowHeights[key] ?? 40, "yPos:", itemStore.yPos)
+                                //itemStore.yPos = rowHeights[key] ?? 40
                             }
                     })
                     .padding(.bottom, -1)
@@ -166,20 +179,21 @@ struct SpreadSheet: View {
                             .background(.red)
                             .border(.black)
                     }.buttonStyle(PlainButtonStyle()).padding(-9)
-                }.onChange(of: itemStore.items) {
-                    //print(itemStore.montantHT())
                 }
             }.background(GeometryReader { geometry in
                 Color.clear
-                    .onChange(of: geometry.frame(in: .local).maxY) {
-                        yPos = geometry.frame(in: .local).maxY
-                        if yPos > 1000 {
-                            //onExceedPageHeight()
+                    .onChange(of: geometry.size.height) {
+                        itemStore.yPos = geometry.size.height + 10
+                        print("size height:", itemStore.yPos)
+                        if itemStore.yPos > 1100 {
+                            onExceedPageHeight()
+                            isPageFull = true
+                        } else {
+                            onUnexceedPageHeight()
+                            isPageFull = false
                         }
                     }
-            }
-                         
-            )
+            })
             .padding(.leading, 37)
             
             Button {
@@ -191,7 +205,7 @@ struct SpreadSheet: View {
                     .background(.blue.opacity(0.2))
                     .border(.black)
             }.buttonStyle(PlainButtonStyle()).padding(.top, -8).padding(.leading, -2)
-                .disabled(yPos > 1100)
+                .disabled(isPageFull)
         }
     }
     
@@ -219,6 +233,7 @@ struct DynamicHeightTextEditor: View {
     @Binding var text: String
     var font: Font
     @Binding var rowHeight: CGFloat?
+    var isPageFull: Bool
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -238,11 +253,11 @@ struct DynamicHeightTextEditor: View {
             TextEditor(text: $text)
                 .padding(8)
                 .font(font)
-                .frame(height: rowHeight)
+                .frame(height: self.rowHeight)
                 .background(Color.clear)
                 .onAppear {
-                    if rowHeight == nil {
-                        rowHeight = 40
+                    if self.rowHeight == nil {
+                        self.rowHeight = 40
                     }
                 }
                 .onChange(of: text) { old, new in
@@ -254,5 +269,9 @@ struct DynamicHeightTextEditor: View {
 
 
 #Preview {
-    SpreadSheet(itemStore: ItemStore())
+    SpreadSheet(itemStore: ItemStore()) {
+        
+    } onUnexceedPageHeight: {
+        
+    }
 }
